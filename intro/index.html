@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+        <!-- call method -->
+        <small>{{ greet('afternoon') }}</small>
+        <!-- data binding -->
+        <h1>{{ name }}</h1>
+        <p>{{ job }}</p>
+        <!-- directive data binding -->
+        <a v-bind:href="web">web</a>
+        <p v-html="webTag"></p>
+        <!-- event -->
+        <hr>
+        <small>Event</small>
+        <h3>{{year}}</h3>
+        <button @click="add(1)">Add a year</button>
+        <button v-on:click="subtract(1)">Substract a year</button>
+        <button @dblclick="add(10)">Add 10 years</button>
+        <button v-on:dblclick="subtract(10)">Substract 10 years</button>
+        <div id="canvas" @mousemove="updateXY">
+            <p>{{x}} , {{y}}</p>
+        </div>
+        <small>Event modifier</small>
+        <a @click.once="show_alert" href="google.com">tes link</a>
+        <small>| Keyboard Event : </small>
+        <input type="text" @keyup.enter="log_keyboard" v-model="textValue">
+        <!-- two way data binding -->
+        <p>your log : <i> {{logKeyboard}}</i> | value : {{textValue}}</p>
+
+        <hr>
+        <small>Computed</small>
+        <h3>year : {{year}}</h3>
+        <button @click="a++">add to A</button>
+        <button @click="b++">add to B</button>
+        <small>A : {{a}} | B :{{b}}</small><br>
+        <small> year + A : {{addToA()}}</small><br>
+        <small> year + B : {{addToB}}</small>
+
+        <hr>
+        <small>Dynamic CSS</small>
+        <button @click="nearby = !nearby">Toggle Nearby</button>
+        <button @click="available = !available">Toggle Available</button>
+        <div v-bind:class="compClasses">
+            <span>Test</span>
+        </div>
+
+        <hr>
+        <small>Conditional - if else</small>
+        <button @click="error = !error">Toggle Error</button>
+        <button @click="success = !success">Toggle Success</button>
+
+        <p v-if="error">There has been an error</p>
+        <p v-else-if="success">Wooo success :)</p>
+
+        <hr>
+        <small>Looping</small>
+        <ul>
+            <li v-for="(item,index) in testArray">
+                {{item}}
+            </li>
+        </ul>
+
+        <div v-for="(item ,index) in employees">
+            <h6>{{index}}. <b>{{item.name}}</b> <span>| age : {{item.age}}</span></h6>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
