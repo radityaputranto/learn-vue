@@ -32,6 +32,7 @@ var one = new Vue({
 
     }
 });
+
 var two = new Vue({
     el: "#vue-app-two",
     data: {
@@ -51,3 +52,18 @@ var two = new Vue({
     }
 });
 one.title = "change form outside";
+
+var three = new Vue({
+    el: "#vue-app-three",
+    data: {
+        food: "Indonesia Food",
+
+    },
+    methods: {
+        readRefs: function () {
+            this.food = this.$refs.favFood.value;
+            console.log(this.$refs.test.innerText);
+        }
+
+    }
+});

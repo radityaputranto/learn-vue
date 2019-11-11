@@ -24,6 +24,18 @@
         <greeting></greeting>
         <button @click="changeTitle">Change App One</button>
     </div>
+
+    <hr>
+
+    <div id="vue-app-three">
+        <h1>Refs</h1>
+        <input type="text" ref="favFood">
+        <button @click="readRefs">Submit</button>
+        <p>Your fav food : {{food}}</p>
+        <div ref="test">Hello world</div>
+    </div>
+
+
     <script src="app.js"></script>
 </body>
 
