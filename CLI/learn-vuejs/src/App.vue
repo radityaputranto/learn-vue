@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
+
+    <!-- Component -->
+    <ninjas></ninjas>
+    <hr />
+    <!-- local component -->
+    <h3>App H3</h3>
+    <employee></employee>
   </div>
 </template>
 
 <script>
+//Local Component
+import Employee from "./Employee.vue";
+//Vue.component("employee", Employee);
+
 export default {
-  name: "app",
+  components: {
+    employee: Employee
+  },
+  //name: "app",
   data() {
     return {
       msg: "Welcome to Your Vue.js App"
