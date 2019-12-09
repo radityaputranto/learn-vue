@@ -11,7 +11,7 @@ export default {
   name: "test1",
   data() {
     return {
-      msg: "test new component"
+      msg: "test new component exrternal"
     };
   }
 };

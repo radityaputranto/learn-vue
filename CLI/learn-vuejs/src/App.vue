@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- header -->
+    <app-header></app-header>
+
     <h1>{{ msg }}</h1>
 
     <!-- Component -->
@@ -11,17 +14,25 @@
 
     <!-- tes branch -->
     <h1>Branch Development</h1>
+
+    <!-- footer -->
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 //Local Component
+
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 import Employee from "./Employee.vue";
 //Vue.component("employee", Employee);
 
 export default {
   components: {
-    employee: Employee
+    employee: Employee,
+    "app-header": Header,
+    "app-footer": Footer
   },
   //name: "app",
   data() {
